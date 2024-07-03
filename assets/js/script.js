@@ -19,6 +19,27 @@ function toggleNav() {
 // Movable Arrow
 let scrollInterval;
 const content = document.getElementById('selections');
+const btnLeft =  document.querySelector('#genres .arrow:first-child');
+const btnRight = document.querySelector('#genres .arrow:last-child');
+const scrollmount = 100;
+
+if (document.title === "IBook - Corporate Website - Products Page") {
+    btnLeft.addEventListener('click', () => {
+        content.scrollBy({
+            left: -scrollmount,
+            behavior: 'smooth'
+        })
+    });
+    
+    btnRight.addEventListener('click', () => {
+        content.scrollBy({
+            left: scrollmount,
+            behavior: 'smooth'
+        })
+    });    
+}
+
+
 function move(control) {
     stopScrolling();
     scrollInterval = setInterval(function() {
@@ -30,10 +51,8 @@ function stopScrolling() {
     clearInterval(scrollInterval);
 }
 
-let slideIndex = 1;
-showSlides(slideIndex);
-
 // Next/previous controls
+let slideIndex = 1;
 function plusSlides(n) {
   showSlides(slideIndex += n);
 }
@@ -42,12 +61,18 @@ function plusSlides(n) {
 function showSlides(n) {
     let i;
     let slides = document.querySelectorAll('.team-box');
-    if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length}
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
+    try {
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+        }
+        slides[slideIndex-1].style.display = "flex";
     }
-    slides[slideIndex-1].style.display = "flex";
+    catch (e) {
+        console.log("Something went wrong");
+    }
+    
 }
 
 // Auto Slide
@@ -55,4 +80,8 @@ function autoSlides() {
     plusSlides(+1);
     setTimeout(autoSlides, 8000);
 }
-autoSlides();
+
+if (document.title === "IBook - Corporate Website - Careers Page") {
+    autoSlides();
+    showSlides(slideIndex);
+}

@@ -80,6 +80,7 @@ input, textarea {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 .banner img {
@@ -308,6 +309,7 @@ input, textarea {
 
 #About h2 {
     text-align: center;
+    padding: 20px;
 }
 
 /* SERViCE PAGE */
@@ -367,7 +369,7 @@ input, textarea {
 #container .services-box {
     position: relative;
     width: 30%;
-    min-width: 220px;
+    min-width: 200px;
     min-height: 260px;
     padding: 14px 10px 30px 10px;
     border: 2px solid var(--border);
@@ -396,7 +398,7 @@ input, textarea {
 
 .services-box h4 {
     font-family: "IBM Plex Sans";
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600 !important;
     text-transform: uppercase;
     padding-left: 20%;
@@ -498,6 +500,7 @@ input, textarea {
 #product-des button {
     background-color: var(--button);
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+    margin: 10px 0;
 }
 
 #controls {
@@ -517,6 +520,7 @@ input, textarea {
     overflow: hidden;
     text-wrap: nowrap;
     transition: .3s;
+    scroll-behavior: smooth;
 }
 
 #genres .arrow {
@@ -552,9 +556,9 @@ input, textarea {
 
 #container .book {
     position: relative;
-    width: 23%;
-    min-width: 170px;
-    height: 240px;
+    width: 22%;
+    min-width: 130px;
+    height: 230px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
     margin-bottom: 10px;
 }
@@ -586,10 +590,11 @@ input, textarea {
 
 #select-pages {
     text-align: center;
+    text-wrap: nowrap;
 }
 
 #select-pages .selection-btn {
-    font-size: 12px;
+    font-size: 10px;
     border: none;
     background-color: #2b2b2b;
     border-radius: 4px;
@@ -675,6 +680,7 @@ input, textarea {
     position: relative;
     width: 60%;
     height: 100%;
+    text-wrap: wrap;
 }
 
 .right-des h3 {
@@ -762,6 +768,7 @@ input, textarea {
 }
 
 #contact-form {
+    min-height: 500px;
     display: flex;
     justify-content: center;
 }
@@ -804,6 +811,7 @@ input, textarea {
 
 .person img {
     max-width: 60px;
+    aspect-ratio: 1;
     height: 100%;
     float: left;
     padding-right: 10px;
@@ -854,13 +862,14 @@ input, textarea {
 
 #Careers-brochure {
     width: 100%;
-    min-height: 350px;
+    min-height: 400px;
     background-color: #000;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     padding-bottom: 40px;
+    overflow: hidden;
 }
 
 #Careers-brochure #Title {
@@ -880,13 +889,13 @@ input, textarea {
 
 #Careers-brochure #container {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
 #container .careers-box {
-    width: 30%;
-    min-width: 120px;
-    min-height: 250px;
+    width: 33%;
+    min-width: 110px;
+    min-height: 350px;
     color: #FFF;
     padding: 20px;
     text-align: center;
@@ -940,7 +949,7 @@ input, textarea {
 #Careers-team #container {
     position: relative;
     width: 100%;
-    min-height: 350px;
+    min-height: 450px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -975,7 +984,7 @@ input, textarea {
 
 #team .team-box {
     display: flex;
-    min-width: 250px;
+    min-width: 200px;
     max-width: 320px;
     min-height: 300px;
     flex-direction: column;
@@ -1003,7 +1012,7 @@ input, textarea {
 }
 
 .team-box p {
-    font-size: 10px;
+    font-size: 12px;
 }
 
 /* FOOTER SECTION */
@@ -1014,6 +1023,7 @@ footer {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    padding: 0 5%;
 }
 
 footer #logo {
@@ -1023,7 +1033,7 @@ footer #logo {
 
 footer span {
     color: #FFF;
-    font-size: 12px;
+    font-size: 10px;
 }
 
 footer i {
@@ -1035,4 +1045,142 @@ footer i {
 @keyframes UpDown {
     25% {transform: translateY(-5px)}
     75% {transform: translateY(5px)}
+}
+
+@media screen and (max-width: 770px) {
+    #About #timeline {
+        width: 60%;
+        padding-right: 10px;
+    }
+    
+    #About #images {
+        width: 40%;
+    }
+
+    #contact-info #container {
+        padding: 0 5%;
+    }
+
+    #container .contact-box {
+        min-width: 130px;
+        min-height: 180px;
+    }
+
+    .contact-box img {
+        width: 40px;
+    }
+
+    .contact-box h3 {
+        font-size: 12px;
+    }
+
+    .contact-box address {
+        font-size: 9px;
+    }
+
+    .contact-box button {
+        font-size: 10px;
+        padding: 8px 12px;
+    }
+
+    .careers-box h2 {
+        font-size: 14px;
+    }
+
+    .careers-box p {
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    #About p {
+        font-size: 14px;
+        margin: 20px 0;
+    }
+
+    #About #timeline {
+        width: 100%;
+        clear: both;
+        margin-bottom: 40px;
+    }
+    
+    #About #images {
+        width: 100%;
+        clear: both;
+    }
+
+    #container .services-box {
+        width: 100%;
+    }
+
+    #product-info #product-des {
+        width: 100%;
+        clear: both;
+        margin: 10px 0;
+    }
+
+    #product-info #products-picture {
+        width: 100%;
+        clear: both;
+    }
+
+    #controls {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #genres {
+        width: 100%;
+    }
+    
+    #controls form {
+        width: 100%;
+    }
+
+    .right-des h3 {
+        font-family: "IBM Plex Sans", sans-serif;
+        font-size: 16px;
+    }
+
+    #contact-info #container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #container .contact-box {
+        width: 100%;
+        min-height: 150px;
+        padding: 10px 0;
+    }
+
+    #contact-form {
+        flex-direction: column;
+    }
+
+    #SendFeedBack {
+        width: 100%;
+        padding: 40px 10px;
+    }
+
+    #SendFeedBack button {
+        width: 100%;
+    }
+
+    #individual-contacts {
+        width: 90%;
+        padding: 10px;
+        margin: 5%;
+    }
+
+    #individual-contacts .person {
+        width: 100%;
+        min-height: 80px;
+        padding: 10px;
+    }
+    
+    #Serv-banner div {
+        right: 10px;
+    }
 }
