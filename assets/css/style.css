@@ -1,0 +1,1038 @@
+/* Import */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@font-face {
+    font-family: "IBM Plex Sans";
+    src: url(../font/IBM\ Plex\ Sans/IBMPlexSans-Medium.ttf);
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url(../font/Poppins/Poppins-Regular.ttf);
+}
+
+/* Universal Styling */
+*, *::before, *::after {
+    padding: 0; margin: 0;
+    box-sizing: border-box;
+}
+
+/* Variables */
+:root {
+    --frst: #FFBD59;
+    --border: #bbbbbb;
+    --button: #18af5c;
+}
+
+/* All styling */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100dvh;
+    width: 100%;
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
+    padding-left: 200px;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+input, textarea {
+    padding: 8px 12px;
+    margin: 0;
+}
+
+/* ClassName auto css */
+.normal-btn {
+    color: #000;
+    background-color: #FFF;
+    border: none;
+    outline: none;
+    padding: 10px 40px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.normal-btn:hover {
+    color: #FFF !important;
+    background-color: #000 !important;
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    min-height: 180px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    color: #FFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    filter: brightness(50%);
+    z-index: -1;
+}
+
+.banner p {
+    font-weight: 300;
+}
+
+.selection-btn {
+    color: #000;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 8px 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.selection-btn:hover {
+    color: #FFF;
+    background-color: #000;
+}
+
+.selection-btn:not(:nth-child(1)) {
+    border-left: 1px solid var(--border);
+}
+
+.outer-btn {
+    color: #000;
+    background-color: transparent;
+    border: 2px solid #000;
+    border-radius: 20px;
+    outline: none;
+    padding: 10px 18px;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.outer-btn:hover {
+    background-color: #000;
+    color: #FFF;
+}
+
+/* Navigation Style */
+#main-navigation {
+    position: fixed;
+    width: 200px;
+    height: 100%;
+    background-color: var(--frst);
+    padding: 80px 0;
+    left: 0; top: 0;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+#main-navigation button {
+    display: none;
+    outline: none;
+    border: none;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 14px !important;
+    border-radius: 2px;
+    padding: 6px 12px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+}
+
+#nav-content {
+    text-align: center;
+    width: 100%;
+}
+
+#nav-content li {
+    padding: 5px 2px;
+}
+
+#nav-content li a {
+    text-transform: capitalize;
+    transition: 0.1s;
+    padding: 6px 20px;
+}
+
+#link-content h4, #nav-content li a, #main-navigation button {
+    font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+#nav-content li:has(a:hover) {
+    background-color: #ffc671;
+}
+#nav-content li a:hover, #nav-content li a.clicked {
+    color: #FFF;
+}
+
+#link-content {
+    width: 100%;
+    height: 20%;
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+    left: 0;
+}
+
+#link-icon i {
+    font-size: 24px;
+    margin: 10px 5px 0;
+}
+
+.showNav {
+    left: 0 !important;
+}
+
+@media (max-width: 840px) {
+    #main-navigation button {
+        display: block;
+    }
+
+    #main-navigation {
+        left: -100%;
+        transition: .3s;
+    }
+
+    body {
+        padding-left: 0;
+    }
+}
+
+/* HOME PAGE */
+#HeroPage {
+    min-height: 100dvh;
+    width: 100%;
+    position: relative;
+    padding: 40px;
+}
+
+#HeroPage::before {
+    position: absolute;
+    content: " ";
+    width: 100%;
+    height: 100%;
+    background: #FFF url(../img/home\ page\ pic.png) no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    filter: brightness(70%);
+    z-index: -1;
+    left: 0;
+    top: 0;
+}
+
+#HeroPage #logo {
+    width: 100px;
+}
+
+#HeroPage h1, #HeroPage h4 {
+    font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
+    color: #FFF;
+    margin: 0 40px 10px 40px;
+    clear: both;
+}
+
+#HeroPage h1 {
+    margin-top: 50px;
+}
+
+#HeroPage h4 {
+    font-weight: 300;
+}
+
+#HeroPage button {
+    margin: 10px 0 0 40px;
+    font-size: 12px;
+}
+
+/* ABOUT PAGE */
+#About {
+    width: 100%;
+    padding: 40px;
+}
+
+#About p {
+    font-size: 14px;
+    margin: 20px 0 20px 20px;
+}
+
+#About #timeline {
+    width: 60%;
+    float: left;
+    margin-bottom: 40px;
+}
+
+#About #images {
+    width: 30%;
+    float: right;
+}
+
+#images img {
+    width: 100%;
+}
+
+#timeline h4 {
+    margin-top: 20px;
+}
+
+#timeline p {
+    font-size: 12px;
+    margin: 0;
+}
+
+#About h2 {
+    text-align: center;
+}
+
+/* SERViCE PAGE */
+#Serv-banner {
+    height: 280px;
+    margin-bottom: 100px;
+}
+
+#Serv-banner div {
+    font-family: "Poppins";
+    position: absolute;
+    width: 300px;
+    height: auto;
+    background-color: #FFF;
+    color: #000;
+    padding: 12px 10px;
+    bottom: -50px;
+    right: 30px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+#Serv-banner div p {
+    font-size: 12px;
+}
+
+#Services h4 {
+    font-weight: 300;
+    margin-left: 40px;
+}
+
+#Services h2 {
+    position: relative;
+    font-family: "IBM Plex Sans", sans-serif;
+    margin-left: 40px;
+}
+
+#Services h2::after {
+    content: "";
+    display: inline-block;
+    width: 35%;
+    height: 1px;
+    background-color: #000;
+    margin-bottom: 5px;
+    margin-left: 20px;
+}
+
+#Services #container {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 20px 0;
+    padding: 0 5%;
+    gap: 1%;
+}
+
+#container .services-box {
+    position: relative;
+    width: 30%;
+    min-width: 220px;
+    min-height: 260px;
+    padding: 14px 10px 30px 10px;
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+}
+
+.services-box div {
+    position: absolute;
+    height: 20%;
+    width: 30%;
+    overflow: hidden;
+    top: 4px;
+    left: 4px;
+}
+
+.services-box div img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.5);
+    top: 0; left: 0;
+}
+
+.services-box h4 {
+    font-family: "IBM Plex Sans";
+    font-size: 16px;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    padding-left: 20%;
+    min-height: 70px;
+}
+
+.services-box p {
+    font-size: 13px;
+}
+
+.services-box a {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    padding: 2px 10px;
+}
+
+.services-box a::before {
+    position: absolute;
+    content: " ";
+    width: 100%;
+    height: 1px;
+    background-color: #000;
+    bottom: 0;
+    transition: .2s;
+}
+
+.services-box a::after {
+    position: absolute;
+    content: ">>";
+    display: inline-flex;
+    right: -12px;
+    top: 3px;
+    transition: .2s;
+}
+
+.services-box a:hover::before {
+    width: 110%;
+}
+.services-box a:hover::after {
+    right: -16px;
+}
+
+/* PRODUCT PAGE */
+#prod-banner {
+    height: 300px;
+}
+
+#Products {
+    width: 100%;
+    padding: 40px 20px;
+}
+
+#product-info {
+    width: 100%;
+}
+
+#product-info #product-des {
+    width: 60%;
+    height: auto;
+    float: left;
+    text-align: center;
+}
+
+#product-info #products-picture {
+    width: 30%;
+    height: 100%;
+    float: right;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#products-picture img {
+    width: 80%;
+}
+
+#product-des h1 {
+    position: relative;
+}
+
+#product-des h1::after {
+    content: "  ";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #000;
+    left: 0;
+    bottom: 0;
+}
+
+#product-des p {
+    font-size: 12px;
+    margin: 10px;
+    text-align: left;
+    text-indent: 30px;
+}
+
+#product-des button {
+    background-color: var(--button);
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+#controls {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#genres {
+    display: flex;
+    width: 50%;
+}
+
+#genres #selections {
+    overflow: hidden;
+    text-wrap: nowrap;
+    transition: .3s;
+}
+
+#genres .arrow {
+    border: 1px solid var(--border);
+    border-radius: 2px;
+}
+
+#controls form {
+    width: 45%;
+}
+
+#controls form #search {
+    width: 70%;
+    padding: 8px 12px;
+}
+
+#controls form button {
+    width: 25%;
+    padding: 8px;
+    padding-bottom: 9px;
+    background-color: var(--button);
+    border-radius: 2px;
+}
+
+#Products #container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 30px 0;
+    gap: 1%;
+}
+
+#container .book {
+    position: relative;
+    width: 23%;
+    min-width: 170px;
+    height: 240px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    margin-bottom: 10px;
+}
+
+#container .book::before {
+    position: absolute;
+    content: "Learn more";
+    width: 100%;
+    height: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+    transition: .3s;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+#container .book:hover::before {
+    height: 100%;
+}
+
+.book img {
+    width: 100%;
+    height: 100%;
+}
+
+#select-pages {
+    text-align: center;
+}
+
+#select-pages .selection-btn {
+    font-size: 12px;
+    border: none;
+    background-color: #2b2b2b;
+    border-radius: 4px;
+    color: #FFF;
+    padding: 8px 12px;
+    text-transform: capitalize;
+}
+
+#select-pages .selection-btn:hover {
+    color: #000 !important;
+    background-color: #FFF !important;
+}
+
+#select-pages .selection-btn:first-child {
+    color: #5c5c5c;
+}
+
+#select-pages .selection-btn:last-child, #select-pages a.clicked {
+    background-color: #ee9d24;
+    color: #000;
+}
+
+/* BLOG PAGE */
+#Blog {
+    background-color: #ffd18d;
+    min-height: 100vh;
+    padding: 10px 20px;
+}
+
+#Blog h1 {
+    display: inline-block;
+    position: relative;
+    font-weight: 400;
+    margin-top: 45px;
+}
+
+#Blog h1::before {
+    position: absolute;
+    content: " ";
+    width: 30%;
+    height: 3px;
+    background-color: #7a99bd;
+    border-radius: 4px;
+    bottom: 0;
+    left: 0;
+}
+
+#Blog #container {
+    width: 100%;
+    margin: 20px 0;
+}
+
+#container .blog-box {
+    width: 100%;
+    min-height: 200px;
+    margin: 10px 0;
+    background-color: #FFF;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5px;
+    margin-bottom: 20px;
+}
+
+.blog-box .left-img {
+    width: 40%;
+    height: 100%;
+    border-radius: 2px;
+    overflow: hidden;
+    margin-right: 10px;
+    padding: 0;
+}
+
+.left-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.right-des {
+    position: relative;
+    width: 60%;
+    height: 100%;
+}
+
+.right-des h3 {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 22px;
+    color: #1b00b4;
+}
+
+.right-des p {
+    font-size: 12px;
+    margin: 10px 0 28px;
+}
+
+.right-des a {
+    font-size: 14px;
+    position: relative;
+    transition: .3s;
+}
+
+.right-des a::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: #000;
+    bottom: 0;
+    left: 0;
+}
+
+.right-des a:hover {
+    padding: 4px 8px;
+}
+
+/* CONTACT PAGE */
+#Contact {
+    width: 100%;
+}
+
+#Contact #contact-info {
+    width: 100%;
+    background: #FFF url(../img/background-contact.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+#contact-info h1 {
+    font: 44px "IBM Plex Sans", sans-serif;
+}
+
+#contact-info #container {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    background: transparent;
+    padding: 25px 10%;
+    gap: 10px;
+}
+
+#container .contact-box {
+    width: 30%;
+    min-width: 180px;
+    min-height: 270px;
+    background-color: #ffc671;
+    border-radius: 20px;
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.contact-box img {
+    max-width: 80px;
+}
+
+.contact-box address {
+    font-size: 12px;
+}
+
+#contact-form {
+    display: flex;
+    justify-content: center;
+}
+
+#SendFeedBack {
+    width: 50%;
+    padding: 20px 10px;
+}
+
+#SendFeedBack h1 {
+    font-family: "IBM Plex sans", sans-serif;
+}
+
+#SendFeedBack input, #SendFeedBack textarea {
+    width: 100%;
+    margin: 10px 0;
+}
+
+#SendFeedBack button {
+    border: 1px solid #000;
+    border-radius: 4px;
+}
+
+#individual-contacts {
+    width: 50%;
+    border: 1px solid var(--border);
+    padding: 40px 20px;
+    margin: 10px;
+}
+
+#individual-contacts .person {
+    width: 100%;
+    min-height: 80px;
+    border: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.person img {
+    max-width: 60px;
+    height: 100%;
+    float: left;
+    padding-right: 10px;
+}
+
+.person h5 {
+    font-family: "IBM Plex sans", sans-serif;
+}
+
+.person p {
+    font-size: 10px;
+}
+
+/* CAREERS PAGE */
+#Careers {
+    width: 100%;
+}
+
+#Careers #Careers-banner {
+    width: 100%;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0 20%;
+    text-align: center;
+}
+
+#Careers-banner h1 {
+    font: 34px "IBM Plex Sans", sans-serif;
+    font-weight: 900;
+}
+
+#Careers-banner h1 span {
+    color: var(--frst);
+}
+
+#Careers-banner button {
+    border-color: #000;
+    background-color: var(--frst);
+    letter-spacing: 3px;
+}
+
+#Careers-banner button:hover {
+    background-color: #000;
+}
+
+#Careers-brochure {
+    width: 100%;
+    min-height: 350px;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 40px;
+}
+
+#Careers-brochure #Title {
+    display: flex;
+    align-items: center;
+}
+
+#Careers-brochure #Title h1 {
+    color: #FFF;
+    font-size: 34px;
+    padding: 10px 0 0;
+}
+
+#Careers-brochure #Title #logo { 
+    width: 100px;
+}
+
+#Careers-brochure #container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#container .careers-box {
+    width: 30%;
+    min-width: 120px;
+    min-height: 250px;
+    color: #FFF;
+    padding: 20px;
+    text-align: center;
+}
+
+#container .careers-box:not(:first-child) {
+    border-left: 1px solid var(--border);
+}
+
+.careers-box div {
+    width: 100%;
+    aspect-ratio: 1;
+    border: 2px solid var(--frst);
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.careers-box div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.careers-box h2 {
+    font-family: "IBM Plex Sans", sans-serif;
+}
+
+.careers-box h2 span {
+    color: var(--frst);
+}
+
+.careers-box p {
+    font-size: 12px;
+}
+
+#Careers-team {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+#Careers-team h1 {
+    font: 38px "IBM Plex Sans", sans-serif;
+    font-weight: 600;
+    padding-bottom: 10px;
+}
+
+#Careers-team #container {
+    position: relative;
+    width: 100%;
+    min-height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+#container .draw-person {
+    height: 350px;
+    padding: 15px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+#container .draw-person:first-child {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+#container .draw-person:last-child {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+#container #team {
+    width: 100%;
+    height: 100%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#team .team-box {
+    display: flex;
+    min-width: 250px;
+    max-width: 320px;
+    min-height: 300px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 10px;
+    text-align: center;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.team-box div {
+    width: 100px;
+    height: auto;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.team-box div img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+.team-box p {
+    font-size: 10px;
+}
+
+/* FOOTER SECTION */
+footer {
+    width: 100%;
+    height: 100px;
+    background-color: #000;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer #logo {
+    width: 80px;
+    margin-bottom: 10px;
+}
+
+footer span {
+    color: #FFF;
+    font-size: 12px;
+}
+
+footer i {
+    color: #FFF;
+    font-size: 22px;
+    animation: UpDown 3s ease-in-out 0s infinite;
+}
+
+@keyframes UpDown {
+    25% {transform: translateY(-5px)}
+    75% {transform: translateY(5px)}
+}
